@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background: linear-gradient(150deg, #000000, #0000ff);
+  background: linear-gradient(150deg, #000000, #1E90FF);
 }
 
 .cabecalho {
@@ -72,7 +72,7 @@ body {
 
 .menu-pre-partida-comum{
   align-items: center;
-  padding-left: 35%;
+  padding-left: 30%;
 }
 
 .menu-pre-partida-comum a:hover .btn-menu{
@@ -83,7 +83,7 @@ body {
 
 .menu-pre-partida-comum .btn-menu{
   
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   line-height: 50px;
   margin-top: 20px;
@@ -96,6 +96,7 @@ body {
 
 .menu-de-partida{
   padding-left: 30%;
+  padding-bottom: 30px;
   background: #F4A460;
 }
 
@@ -114,24 +115,30 @@ body {
   
   flex-direction: column;
   text-align: center;
-  line-height: 80px;
+  line-height: 75px;
   margin-top: 20px;
   margin-right: 20px;
   font-family: "Raleway", sans serif;
   font-size: 22px;
-  width: 85px;
+  width: 80px;
   border-radius: 5px;
 }
 
 
+.Player_parte_baixa{
+  align-items: center;
+  display: flex;
+  gap: 120px;
+  padding-left: 35%;
+}
 
-.menu-de-partida .play_2 a:hover .btn-menu{
+.Player_parte_baixa .play_2 a:hover .btn-menu{
   cursor: pointer;
   transition: 0.2s;
   transform: scale(1.1);
 }
 
-.menu-de-partida .play_2 .btn-menu{
+.Player_parte_baixa .play_2 .btn-menu{
   
   flex-direction: column;
   text-align: center;
@@ -142,6 +149,27 @@ body {
   font-size: 18px;
   width: 250px;
   border-radius: 15px;
+}
+
+.Player_parte_baixa .config-play_2_baixo{
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.config-play_1{
+  align-items: center;
+  padding-left: 15%;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.config-play_2{
+  align-items: center;
+  padding-left: 50%;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
 }
 
 .redes-sociais {
@@ -169,15 +197,30 @@ body {
 }
 
 
+.espaco_1{
+  display: flex;
+  min-height: calc(65vh - 240px);
+  justify-content: space-between;
+}
+
+.espaco_2{
+  display: flex;
+  min-height: calc(75vh - 240px);
+  justify-content: space-between;
+}
 
 .footer{
-  width: 150%;
+  width: 100%;
   padding-block: 30px;
   padding-left: 30px;
   flex-direction: row;
 
-  position: absolute;
+  
   bottom: 0;
   left: 0;
   background: linear-gradient(150deg, #000000, #6959CD);
+
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  display: block;
 }
