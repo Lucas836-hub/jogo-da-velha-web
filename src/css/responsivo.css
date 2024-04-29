@@ -38,8 +38,74 @@
     padding: 30px;
   }
 
+  .menu-inicial{
+    padding-left: 25%;
+  }
+
   .parte_funcional{
     flex-direction: column;
+  }
+
+  .menu-de-partida{
+    padding-bottom: 30px;
+  }
+
+  .menu-de-partida .tabuleiro .btn-tabuleiro{
+  
+  line-height: 45px;
+  font-family: "Raleway", sans serif;
+  font-size: 18px;
+  width: 50px;
+  }
+
+  .Player_parte_baixa{
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    padding-left: 15%;
+}
+
+.Player_parte_baixa .play_2 .btn-menu{
+  
+  line-height: 50px;
+  margin-top: 20px;
+  margin-right: 40px;
+  font-family: "Raleway", sans serif;
+  font-size: 18px;
+  width: 150px;
+  border-radius: 15px;
+}
+
+.espaco_1{
+  min-height: calc(43vh - 240px);
+}
+
+.espaco_2{
+  min-height:  calc(73vh - 530px);
+}
+  .menu-pre-partida-comum{
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-pre-partida-comum .btn-menu{
+    width: 200px;
+    font-size: 14px;
+  }
+
+  img{
+    width: 80px;
+  }
+
+  .config-play_1{
+    padding-left: 5%;
+    gap: 5px;
+  }
+
+  .config-play_2{
+    padding-left: 15%;
+    gap: 5px;
   }
 }
 
