@@ -36,29 +36,55 @@
     </header>
 
     <section class="config-play_1">
-      <img src="src/imagens/imagem-1.png"> Player 1 
-      <input title="Digite o seu nome" type="text" id="input_play1" name="name" required minlength="1" maxlength="24" size="22" />
+      <img src="src/imagens/imagem-1_80.png"> Player 1 
+      
 
     </section>
 
-    <section class="config-play_2">
-      Robô <input title="Digite o nome do seu adversario" type="text" id="input_play2" name="name" required minlength="1" maxlength="24" size="22" />
-      <img src="src/imagens/robo-1.png">
-
-    </section>
-
-     <section class="menu-pre-partida-comum">
-      <a  title="Retorna ao menu de partida">
-        <button class="btn-menu" id="btn-jogar" onclick="nome_dos_playes()"><i>Voltar ao Menu de Partidas</i></button>
-      </a>
-
-      <a href="campo-de-batalha.html" title="Iniciar Partida">
-        <button class="btn-menu"><i>Jogar</i></button>
-      </a>
+     <section class="menu-de-partida">
+      <section class="tabuleiro">
+          <a>
+          <button class="btn-tabuleiro" id="btn_0" onclick="jogando('btn_0')">0</button>
+        </a><a>
+          <button class="btn-tabuleiro" id="btn_1" onclick="jogando('btn_1')">1</button>
+        </a><a>
+          <button class="btn-tabuleiro" id="btn_2" onclick="jogando('btn_2')">2</button>
+        </a>
+        </div>
+        <div class="linha_2">
+          <a>
+          <button class="btn-tabuleiro" id="btn_3" onclick="jogando('btn_3')">3</button>
+        </a><a>
+          <button class="btn-tabuleiro" id="btn_4" onclick="jogando('btn_4')">4</button>
+        </a><a>
+          <button class="btn-tabuleiro" id="btn_5" onclick="jogando('btn_5')">5</button>
+        </a>
+        </div>
+        <div class="linha_2">
+          <a>
+          <button class="btn-tabuleiro" id="btn_6" onclick="jogando('btn_6')">6</button>
+        </a><a>
+          <button class="btn-tabuleiro" id="btn_7" onclick="jogando('btn_7')">7</button>
+        </a><a>
+          <button class="btn-tabuleiro" id="btn_8" onclick="jogando('btn_8')">8</button>
+        </a>
+        </div>
+        
+      </section>
      </section>
+     
+    <section class="Player_parte_baixa">
 
+      <div class="play_2">
+        <a href="tipo-de-partida.html" title="Retorna ao menu de partidas">
+        <button class="btn-menu" onclick="audio_sair()"><i>Voltar ao Menu</i></button>
+      </a>
+      </div>
 
-    <div class="espaco_2"></div>
+      
+    </section>
+     <div class="espaco_2"></div>
+    
 
   <footer class="footer">
     Desenvolvidor por : Lucas Gabriel
@@ -102,6 +128,6 @@
           </li>
         </ul>
   </footer>
-   <script src="./src/js/index.js"></script>
+   <script src="./src/js/tabuleiro.js"></script>
   </body>
 </html>
