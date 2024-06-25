@@ -13,6 +13,10 @@ function getRandomInt(max) {
 
 var play_da_vez = "X"
 var l =["","","","","","","","",""]
+var cont_botao=0
+var prox_img=0
+console.log("matriz ",l)
+colocar_nomes()
 
 function jogando(e){
 	
@@ -22,14 +26,39 @@ function jogando(e){
 	audio_sair(5);
 	l.splice(valor_do_botao(e),1,play_da_vez)
 	troca_play();
+	cont_botao+=1;
 	finalizar_partida()
-	
-	
+	troca_imagem()
+	console.log(prox_img)
+	console.log("matriz ",l)
 
 }
 
 //    Array.splice(inicio, removeCount, novoItem, novoItem, novoItem, ...)
 
+function troca_imagem(){
+	if (prox_img == 0) {
+		document.getElementById('troca_imagem_play_1').src="src/imagens/imagem-1_80_pb.png";
+		document.getElementById('troca_imagem_play_2').src="src/imagens/robo-3_80.png";
+		prox_img=1
+	}
+	else{
+		document.getElementById('troca_imagem_play_1').src="src/imagens/imagem-1_80.png";
+		document.getElementById('troca_imagem_play_2').src="src/imagens/robo-3_80_pb.png";
+		prox_img=0
+	}
+
+}
+
+function colocar_nomes(){
+	var nome_play1 = document.getElementById("name_1_combt");
+	nome_play1.innerHTML = sessionStorage.getItem("save_nome_play1")
+	
+	var nome_play2 = document.getElementById("name_2_combt");
+	nome_play1.innerHTML = sessionStorage.getItem("save_nome_play2")
+	console.log("foi")
+	console.log(sessionStorage.getItem("save_nome_play_1")," p1 ",sessionStorage.getItem("save_nome_play_2")," p2")
+}
 function valor_do_botao(v){
 	if(v == "btn_0"){
 		return 0
@@ -53,18 +82,36 @@ function valor_do_botao(v){
 }
 
 function finalizar_partida(){
+	//linha
 	if (l[0] == l[1] && l[1] == l[2] && l[1] != ""){
 		window.location.href="resultado.html";
 	}
-	/*
-	l[0] == l[3] == l[6] != "" ||
-	if l[6] == l[7] == l[8] || l[2] == l[5] == l[8]{
-		alert("acabou");
+	if(l[3] == l[4] && l[4] == l[5] && l[4] != ""){
+		window.location.href="resultado.html";
 	}
-	if l[0] == l[4] == l[8] || l[2] == l[4] == l[6]{
-		alert("acabou");
-	} */
-	
+	if(l[6] == l[7] && l[7] == l[8] && l[7] != ""){
+		window.location.href="resultado.html";
+	}
+	// coluna
+	if(l[0] == l[3] && l[3] == l[6] && l[3] != ""){
+		window.location.href="resultado.html";
+	}
+	if(l[1] == l[4] && l[4] == l[7] && l[4] != ""){
+		window.location.href="resultado.html";
+	}
+	if(l[2] == l[5] && l[5] == l[8] && l[5] != ""){
+		window.location.href="resultado.html";
+	}
+	// cruzado
+	if(l[0] == l[4] && l[4] == l[8] && l[4] != ""){
+		window.location.href="resultado.html";
+	}
+	if(l[2] == l[4] && l[4] == l[6] && l[4] != ""){
+		window.location.href="resultado.html";
+	}	
+	if( cont_botao == 9){
+		window.location.href="resultado.html";
+	}
 }
 
 function troca_play(){
@@ -75,28 +122,3 @@ function troca_play(){
 	}
 }
 
-function nome_dos_playes(){
-	var nome_play1 = document.getElementById('input_play1').value;	
-	var nome_play2 = document.getElementById('input_play2').value;
-	
-	
-/*	if (nome_play1==""){
-		nome_play1="Player 1"
-	}if (nome_play2==""){
-		nome_play1="Player 2"
-	}
-	alert(nome_play1);
-	if (nome_play1 =="Player 1") {
-		nome_play1.inner.HTML("ola")
-	}*/
-}
-
-//nome_dos_playes()
-
-/*
-function clickTeclado(letra) {
-  alert(letra);
-}
-
-<button class="teclado" id="qTeclado" onClick="clickTeclado(this.value);" value="Q">Q</button>
-*/
