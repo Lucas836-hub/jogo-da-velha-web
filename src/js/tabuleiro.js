@@ -21,16 +21,18 @@ colocar_nomes()
 function jogando(e){
 	
 	var btn_0 = document.getElementById(e);
-	btn_0.innerHTML = play_da_vez;
-	btn_0.style.background = "lightblue";
-	audio_sair(5);
-	l.splice(valor_do_botao(e),1,play_da_vez)
-	troca_play();
-	cont_botao+=1;
-	finalizar_partida()
-	troca_imagem()
-	console.log(prox_img)
-	console.log("matriz ",l)
+	if (l[valor_do_botao(e)] != "X" && l[valor_do_botao(e)] != "O") {
+		btn_0.innerHTML = play_da_vez;
+		l.splice(valor_do_botao(e),1,play_da_vez)
+		btn_0.style.background = "lightblue";
+		audio_sair(5);
+		troca_play();
+		cont_botao+=1;
+		finalizar_partida()
+		troca_imagem()
+		console.log(prox_img)
+		console.log("matriz ",l)
+	}
 
 }
 
@@ -81,35 +83,58 @@ function valor_do_botao(v){
 	}
 }
 
+function enviar_resul(v){
+	sessionStorage.setItem("matriz_final",l);
+	sessionStorage.setItem("vencedor",v);
+	}
+
 function finalizar_partida(){
 	//linha
 	if (l[0] == l[1] && l[1] == l[2] && l[1] != ""){
+		enviar_resul(l[1])
+		sessionStorage.setItem("linha_win",0);
 		window.location.href="resultado.html";
 	}
 	if(l[3] == l[4] && l[4] == l[5] && l[4] != ""){
+		enviar_resul(l[4])
+		sessionStorage.setItem("linha_win",1);
 		window.location.href="resultado.html";
 	}
 	if(l[6] == l[7] && l[7] == l[8] && l[7] != ""){
+		enviar_resul(l[7])
+		sessionStorage.setItem("linha_win",2);
 		window.location.href="resultado.html";
 	}
 	// coluna
 	if(l[0] == l[3] && l[3] == l[6] && l[3] != ""){
+		enviar_resul(l[3])
+		sessionStorage.setItem("linha_win",3);
 		window.location.href="resultado.html";
 	}
 	if(l[1] == l[4] && l[4] == l[7] && l[4] != ""){
+		enviar_resul(l[4])
+		sessionStorage.setItem("linha_win",4);
 		window.location.href="resultado.html";
 	}
 	if(l[2] == l[5] && l[5] == l[8] && l[5] != ""){
+		enviar_resul(l[5])
+		sessionStorage.setItem("linha_win",5);
 		window.location.href="resultado.html";
 	}
 	// cruzado
 	if(l[0] == l[4] && l[4] == l[8] && l[4] != ""){
+		enviar_resul(l[4])
+		sessionStorage.setItem("linha_win",7);
 		window.location.href="resultado.html";
 	}
 	if(l[2] == l[4] && l[4] == l[6] && l[4] != ""){
+		enviar_resul(l[4])
+		sessionStorage.setItem("linha_win",8);
 		window.location.href="resultado.html";
 	}	
 	if( cont_botao == 9){
+		enviar_resul("v")
+		sessionStorage.setItem("linha_win",9);
 		window.location.href="resultado.html";
 	}
 }
