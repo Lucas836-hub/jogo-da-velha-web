@@ -15,6 +15,38 @@ var matriz=[];
 
 var n_botao =0;
 
+function preencher_frame(){
+	preencher_play()
+	preencher_tabela()
+}
+
+function preencher_play(){
+	var nome_play = document.getElementById("name_win");
+	var nm=String(sessionStorage.getItem("vencedor")).trim();
+	nm=nm+"i";
+
+	console.log("win",nm,"ol")
+
+	if(nm == " Xi"){
+		var n_p = String(sessionStorage.getItem("save_nome_play_1"))
+		if(n_p != null){
+			nome_play.innerHTML = n_p
+		}else{
+			nome_play.innerHTML = "Player 1"
+		}
+	}if (nm == 'O') {
+		var n_p = String(sessionStorage.getItem("save_nome_play_2"))
+		if(n_p != null){
+			nome_play.innerHTML = n_p
+		}else{
+			nome_play.innerHTML = "Player 2"
+		}
+	} else {
+		nome_play.innerHTML = "Velha"
+	}
+	
+}
+
 function preencher_tabela(){
 	var tab = sessionStorage.getItem("matriz_final")
 	console.log(tab)
@@ -22,8 +54,10 @@ function preencher_tabela(){
 	var i =0;
 	while(i <= tab.length){
 		var bt =document.getElementById("btn_"+n_botao);
-		if (tab[i] != ',') {
-			console.log("tab ",tab[i])
+		if (tab[i] != ',' && tab[i] != undefined) {
+			/*console.log("tab ",tab[i])
+			console.log("n botao ",n_botao)
+			console.log(bt)*/
 			bt.innerHTML=tab[i];
 			n_botao++;
 			i++;
@@ -38,5 +72,5 @@ function preencher_tabela(){
 }
 
 
-preencher_tabela()
+preencher_frame()
 

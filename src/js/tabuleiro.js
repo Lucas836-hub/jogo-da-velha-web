@@ -54,12 +54,19 @@ function troca_imagem(){
 
 function colocar_nomes(){
 	var nome_play1 = document.getElementById("name_1_combt");
-	nome_play1.innerHTML = sessionStorage.getItem("save_nome_play1")
+	var n_p = String(sessionStorage.getItem("save_nome_play_1"))
+	if(n_p != null && n_p != ''){
+		nome_play1.innerHTML = "__"+n_p
+		console.log("np ",n_p)
+	}
 	
 	var nome_play2 = document.getElementById("name_2_combt");
-	nome_play1.innerHTML = sessionStorage.getItem("save_nome_play2")
-	console.log("foi")
-	console.log(sessionStorage.getItem("save_nome_play_1")," p1 ",sessionStorage.getItem("save_nome_play_2")," p2")
+	var n_p = String(sessionStorage.getItem("save_nome_play_2"))
+	if(n_p != null && n_p != ''){
+		nome_play2.innerHTML = n_p
+		console.log("foi")
+		console.log(n_p," p1 ",sessionStorage.getItem("save_nome_play_2")," p2")
+	}
 }
 function valor_do_botao(v){
 	if(v == "btn_0"){
