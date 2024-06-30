@@ -37,23 +37,23 @@
 
     <section class="config-play_1">
       <img src="src/imagens/imagem-1.png"> Player 1 
-      <input title="Digite o seu nome" type="text" id="input_play1" name="name" required minlength="1" maxlength="24" size="22" />
+      <input title="Digite o seu nome" type="text" id="name_1" name="name" required minlength="1" maxlength="24" size="22" />
 
     </section>
 
     <section class="config-play_2">
-      Robô <input title="Digite o nome do seu adversario" type="text" id="input_play2" name="name" required minlength="1" maxlength="24" size="22" />
+      Robô <input title="Digite o nome do seu adversario" type="text" id="name_2" name="name" required minlength="1" maxlength="24" size="22" />
       <img src="src/imagens/robo-1.png">
 
     </section>
 
      <section class="menu-pre-partida-comum">
-      <a  title="Retorna ao menu de partida">
-        <button class="btn-menu" id="btn-jogar" onclick="nome_dos_playes()"><i>Voltar ao Menu de Partidas</i></button>
+      <a href="tipo-de-partida.html" title="Retorna ao menu de partida">
+        <button class="btn-menu"><i>Voltar ao Menu de Partidas</i></button>
       </a>
 
-      <a href="campo-de-batalha.html" title="Iniciar Partida">
-        <button class="btn-menu"><i>Jogar</i></button>
+      <a title="Iniciar Partida">
+        <button onclick="save_nome_play1()" class="btn-menu"><i>Jogar</i></button>
       </a>
      </section>
 
@@ -102,6 +102,6 @@
           </li>
         </ul>
   </footer>
-   <script src="./src/js/tabuleiro.js"></script>
+   <script src="./src/js/index.js"></script>
   </body>
 </html>
