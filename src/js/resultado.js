@@ -28,7 +28,7 @@ var n_botao =0;
 function preencher_frame(){
 	preencher_play()
 	preencher_tabela()
-	//colorir()
+	colorir()
 }
 
 function preencher_play(){
@@ -107,18 +107,19 @@ function jogar_novamente(){
 }
 
 function colorir(){
-	var tab = sessionStorage.getItem("linha_win")
+	var tab = Number(sessionStorage.getItem("linha_win"));
 	console.log("linha ganhou ",tab)
-	var ini=0;
-	var passo=1;
-	if(tab == "2"){
-		ini=5
-		for (var i = ini; i < ini+3; i+passo) {
-			var bt =document.getElementById("btn_"+i);
-			bt.style.background = "lightgreen";
-			console.log(" i == ",i)
+
+	var linhas_win=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
+	if (tab != 8) {
+		for (var i = 0; i < 3; i++) {
+			console.log("valor wini ",linhas_win[tab][i])
+			console.log("lista da linha ",linhas_win[tab])
+				var bt =document.getElementById("btn_"+linhas_win[tab][i]);
+				bt.style.background = "lightgreen";
+				console.log(" i == ",i)
+			}
 		}
-	}
 }
 
 

@@ -3,7 +3,7 @@ pegar os nomes ok
 setar partida ok
 mostrar os resultados ok
 audio
-add boot
+add boot 1/3
 trocar img boot play ok
 
 */

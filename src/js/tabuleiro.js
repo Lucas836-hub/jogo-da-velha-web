@@ -37,10 +37,10 @@ function play_2(){
 }
 
 function jogando(e){
-	console.log("e == ",e)
+	//console.log("e == ",e)
 	var btn_0 = document.getElementById(e);
 	if (l[valor_do_botao(e)] != "X" && l[valor_do_botao(e)] != "O") {
-		console.log("next play = ",play_da_vez)
+		//console.log("next play = ",play_da_vez)
 		btn_0.innerHTML = play_da_vez;
 		l.splice(valor_do_botao(e),1,play_da_vez)
 		btn_0.style.background = "lightblue";
@@ -57,7 +57,7 @@ function jogando(e){
 		if (vez_do_boot) {
 			vez_do_boot=false
 			console.log("contra_boot ativado")
-			setTimeout(boot_facil(), 3000);
+			setTimeout(boot_medio(), 3000);
 			console.log("boot jogou")
 			
 		} else {
@@ -90,14 +90,14 @@ function boot_facil(){
 	if (true) {
 		while(parar){
 			var tentar=getRandomInt(8);
-			console.log("boot vai jogar = ",tentar)
+			//console.log("boot vai jogar = ",tentar)
 			if (l[tentar] != "X" && l[tentar] != "O") {
 				jogando("btn_"+tentar);
 				parar=false
-				console.log("boot jogou")	
+				//console.log("boot jogou")	
 			}
 			tarncar++;
-			console.log("trancar == ",tarncar)
+			//console.log("trancar == ",tarncar)
 			if (tarncar>=12) {
 				break
 			}
@@ -110,14 +110,24 @@ function boot_medio(){
 	var icone="O"
 	bloc=[[0,1,2],[0,2,1],[1,2,0] , [3,4,5],[3,5,4],[4,5,3]  ,[6,7,8],[6,8,7],[7,8,6] , [0,3,6],[0,6,3],[3,6,0]  ,  [1,4,7],[1,7,4],[4,7,1] ,[2,5,8],[2,8,5],[5,8,2],[0,4,8],[0,8,4],[4,8,0],[2,4,6],[2,6,4],[4,6,2]]
 	var c=0;
-	while(c <= 24){
-		if(tabuleiro[bloc[c][0]] == tabuleiro[bloc[c][1]] && tabuleiro[bloc[c][1]] == icone && tabuleiro[bloc[c][0]] == icone){
-			if (tabuleiro[bloc[c][2]] == ""){
-				return bloc[c][2]
-			}
+	console.log("-------------------------------------")
+	while(c < 24){
+		 //console.log("c == ",c)
+		//console.log("bloc == ",l[bloc[c][0]],"|",l[bloc[c][1]])
+		if(l[bloc[c][0]] == l[bloc[c][1]] && l[bloc[c][1]] !="" && l[bloc[c][2]] == ""){
+			console.log("ia foi = ",bloc[c][2])
 		}
+		if(l[bloc[c][0]] == l[bloc[c][2]] && l[bloc[c][2]] !="" && l[bloc[c][1]] == ""){
+			console.log("ia foi = ",bloc[c][1])
+		}
+		if(l[bloc[c][2]] == l[bloc[c][1]] && l[bloc[c][1]] !="" && l[bloc[c][0]] == ""){
+			console.log("ia foi = ",bloc[c][0])
+		}
+		c++;
 	}
-	boot_facil()
+	if(c == 24){
+		boot_facil()
+	}
 }
 
 function colocar_nomes(){
@@ -125,15 +135,15 @@ function colocar_nomes(){
 	var n_p = String(sessionStorage.getItem("save_nome_play_1"))
 	if(n_p != null && n_p != ''){
 		nome_play1.innerHTML = "__"+n_p
-		console.log("np ",n_p)
+		//console.log("np ",n_p)
 	}
 	
 	var nome_play2 = document.getElementById("name_2_combt");
 	var n_p = String(sessionStorage.getItem("save_nome_play_2"))
 	if(n_p != null && n_p != ''){
 		nome_play2.innerHTML = n_p
-		console.log("foi")
-		console.log(n_p," p1 ",sessionStorage.getItem("save_nome_play_2")," p2")
+		//console.log("foi")
+		//console.log(n_p," p1 ",sessionStorage.getItem("save_nome_play_2")," p2")
 	}else{
 		var jkl = String(sessionStorage.getItem("tipo_p"))
 		if (jkl == "true") {
@@ -208,17 +218,17 @@ function finalizar_partida(){
 	// cruzado
 	if(l[0] == l[4] && l[4] == l[8] && l[4] != ""){
 		enviar_resul(l[4])
-		sessionStorage.setItem("linha_win",7);
+		sessionStorage.setItem("linha_win",6);
 		window.location.href="resultado.html";
 	}
 	if(l[2] == l[4] && l[4] == l[6] && l[4] != ""){
 		enviar_resul(l[4])
-		sessionStorage.setItem("linha_win",8);
+		sessionStorage.setItem("linha_win",7);
 		window.location.href="resultado.html";
 	}	
 	if( cont_botao == 9){
 		enviar_resul("v")
-		sessionStorage.setItem("linha_win",9);
+		sessionStorage.setItem("linha_win",8);
 		window.location.href="resultado.html";
 	}
 }
