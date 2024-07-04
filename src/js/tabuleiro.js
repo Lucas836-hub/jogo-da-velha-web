@@ -1,10 +1,24 @@
-function audio_sair(ms){
+function reproduzir_audio(faixa){
 	var lista_audio_sair=["achoqueeutavabrincando.mp3","arregou.mp3","javaiboltz.mp3","masnaovemporqueehcagao.mp3","morri.mp3"]
  	var lista_audio_perdeu=["caixaocurto.mp3","choqueuva.mp3","erroufeioerrourude.mp3","eunaoassumoessebo.mp3","evilmortytema.mp3","faleceu.mp3","flautabugadatitanic.mp3","hellodarknessmyownfriend.mp3","hellodarknessmyownfriendfunk.mp3","impressionantecomovocestentammederrubar.mp3","isolados.mp3","jaacaboujessica.mp3","jubileuestaesquisitohoje.mp3","musicatristechaves1.mp3","musicatristenaruto.mp3","musicatristenarutofunk.mp3","musicatristexxxtentacion.mp3","naoconseguene.mp3","queotaeuvoudaota.mp3","sefodeugta.mp3","sefudeu.mp3","somfatality.mp3","souummerdamerdao.mp3","surprisemotherfucker.mp3","vemtranquilo.mp3","voceehretardadoporacaso.mp3","vocenaoehtaobomassimehumfracassado.mp3"]
  	var lista_audio_denovo=["cevaimorrer.mp3","horadoshow.mp3","mandarmatar.mp3","tasaindodajaulaomonstro.mp3","vemafobadoassimnao.mp3","voupegarminhamarreta.mp3"]
-
-	var audio = new Audio('src/sons/audio interativo/sair/'+lista_audio_sair[getRandomInt(ms)]);
-	audio.play();	
+	// faixa == qual faixa acima
+	var ms=0
+ 	if (faixa==0) {
+ 		ms=5;
+		var audio = new Audio('src/sons/audio interativo/sair/'+lista_audio_sair[getRandomInt(ms)]);
+		audio.load();
+		audio.play();
+	}if (faixa==1) {
+		ms=6;
+		var audio = new Audio('src/sons/audio interativo/perdeu/'+lista_audio_perdeu[getRandomInt(ms)]);
+		audio.load();
+		audio.play();
+	}if (faixa==2) {
+		ms=5
+		var audio = new Audio('src/sons/audio interativo/denovo/'+lista_audio_denovo[getRandomInt(ms)]);
+		audio.play();
+	}
 }
 
 function getRandomInt(max) {
@@ -44,7 +58,7 @@ function jogando(e){
 		btn_0.innerHTML = play_da_vez;
 		l.splice(valor_do_botao(e),1,play_da_vez)
 		btn_0.style.background = "lightblue";
-		audio_sair(5);
+		//audio_sair(5);
 		console.log("tentou audio")
 		troca_play();
 		cont_botao+=1;
@@ -52,12 +66,14 @@ function jogando(e){
 		troca_imagem()
 		//console.log(prox_img)
 		//console.log("matriz ",l)
+	}else{
+		vez_do_boot=false
 	}
 	if (contra_boot == "false") {
 		if (vez_do_boot) {
 			vez_do_boot=false
 			console.log("contra_boot ativado")
-			setTimeout(boot_medio(), 3000);
+			setTimeout(boot_medio, 500);
 			console.log("boot jogou")
 			
 		} else {
@@ -110,18 +126,26 @@ function boot_medio(){
 	var icone="O"
 	bloc=[[0,1,2],[0,2,1],[1,2,0] , [3,4,5],[3,5,4],[4,5,3]  ,[6,7,8],[6,8,7],[7,8,6] , [0,3,6],[0,6,3],[3,6,0]  ,  [1,4,7],[1,7,4],[4,7,1] ,[2,5,8],[2,8,5],[5,8,2],[0,4,8],[0,8,4],[4,8,0],[2,4,6],[2,6,4],[4,6,2]]
 	var c=0;
+
 	console.log("-------------------------------------")
 	while(c < 24){
 		 //console.log("c == ",c)
 		//console.log("bloc == ",l[bloc[c][0]],"|",l[bloc[c][1]])
 		if(l[bloc[c][0]] == l[bloc[c][1]] && l[bloc[c][1]] !="" && l[bloc[c][2]] == ""){
 			console.log("ia foi = ",bloc[c][2])
+			jogando("btn_"+bloc[c][2]);
+			break
+
 		}
 		if(l[bloc[c][0]] == l[bloc[c][2]] && l[bloc[c][2]] !="" && l[bloc[c][1]] == ""){
 			console.log("ia foi = ",bloc[c][1])
+			jogando("btn_"+bloc[c][1]);
+			break
 		}
 		if(l[bloc[c][2]] == l[bloc[c][1]] && l[bloc[c][1]] !="" && l[bloc[c][0]] == ""){
 			console.log("ia foi = ",bloc[c][0])
+			jogando("btn_"+bloc[c][0]);
+			break
 		}
 		c++;
 	}
@@ -227,9 +251,15 @@ function finalizar_partida(){
 		window.location.href="resultado.html";
 	}	
 	if( cont_botao == 9){
+		if(l[0] == l[4] && l[4] == l[8] && l[4] != ""){
+			enviar_resul(l[4])
+			sessionStorage.setItem("linha_win",6);
+			window.location.href="resultado.html";
+	}else{
 		enviar_resul("v")
 		sessionStorage.setItem("linha_win",8);
 		window.location.href="resultado.html";
+	}
 	}
 }
 
@@ -240,5 +270,14 @@ function troca_play(){
 		play_da_vez="X"
 	}
 }
+
+function sair(){
+	window.location.href="tipo-de-partida.html";
+}
+function an_sair(){
+	reproduzir_audio(0)
+	setTimeout(sair, 2000);
+}
+
 
 

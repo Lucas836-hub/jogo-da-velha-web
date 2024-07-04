@@ -5,14 +5,18 @@ function reproduzir_audio(faixa){
 	// faixa == qual faixa acima
 	var ms=0
  	if (faixa==0) {
+ 		ms=5;
 		var audio = new Audio('src/sons/audio interativo/sair/'+lista_audio_sair[getRandomInt(ms)]);
+		audio.load();
 		audio.play();
 	}if (faixa==1) {
-		var audio = new Audio('src/sons/audio interativo/perdeu/'+lista_audio_sair[getRandomInt(ms)]);
+		ms=6;
+		var audio = new Audio('src/sons/audio interativo/perdeu/'+lista_audio_perdeu[getRandomInt(ms)]);
+		audio.load();
 		audio.play();
 	}if (faixa==2) {
 		ms=5
-		var audio = new Audio('src/sons/audio interativo/denovo/'+lista_audio_sair[getRandomInt(ms)]);
+		var audio = new Audio('src/sons/audio interativo/denovo/'+lista_audio_denovo[getRandomInt(ms)]);
 		audio.play();
 	}
 }
@@ -29,6 +33,8 @@ function preencher_frame(){
 	preencher_play()
 	preencher_tabela()
 	colorir()
+	reproduzir_audio(1)
+	
 }
 
 function preencher_play(){
@@ -101,9 +107,22 @@ function preencher_tabela(){
 	
 }
 
+function pla_again(){
+	window.location.href="campo-de-batalha.html";
+}
+
 function jogar_novamente(){
 	reproduzir_audio(2)
-	window.location.href="campo-de-batalha.html";
+	setTimeout(pla_again, 4000);
+	
+}
+
+function sair(){
+	window.location.href="tipo-de-partida.html";
+}
+function an_sair(){
+	reproduzir_audio(0)
+	setTimeout(sair, 2000);
 }
 
 function colorir(){
