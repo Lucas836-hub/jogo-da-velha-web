@@ -152,6 +152,25 @@ body {
   border-radius: 15px;
 }
 
+.Player_parte_baixa .play_2 a:hover .btn-menu_2{
+  cursor: pointer;
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+
+.Player_parte_baixa .play_2 .btn-menu_2{
+  
+  flex-direction: column;
+  text-align: center;
+  line-height: 50px;
+  margin-top: 20px;
+  margin-right: 40px;
+  font-family: "Raleway", sans serif;
+  font-size: 18px;
+  width: 250px;
+  border-radius: 15px;
+}
+
 .Player_parte_baixa .config-play_2_baixo{
   align-items: center;
   padding-bottom: 50px;

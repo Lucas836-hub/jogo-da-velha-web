@@ -80,11 +80,11 @@
   width: 50px;
   }
 
-  .Player_parte_baixa{
-    align-items: center;
-    display: flex;
-    gap: 10px;
-    padding-left: 15%;
+.Player_parte_baixa{
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  padding-left: 15%;
 }
 
 .Player_parte_baixa .play_2 .btn-menu{
