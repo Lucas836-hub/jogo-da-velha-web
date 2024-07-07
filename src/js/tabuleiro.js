@@ -8,50 +8,54 @@ function reproduzir_audio(faixa){
 	// faixa == qual faixa acima
 	var ms=0
 	var ale=0
-
+	var audio = new Audio('src/sons/audio interativo/sair/'+lista_audio_sair[ale][0]);
+	if (com_som) {
  	if (faixa==0) {
  		ms=4;
  		ale=getRandomInt(ms)
-		var audio = new Audio('src/sons/audio interativo/sair/'+lista_audio_sair[ale][0]);
-		audio.pause();
+		audio = new Audio('src/sons/audio interativo/sair/'+lista_audio_sair[ale][0]);
 		duracao_audio=lista_audio_sair[ale][1]
 		audio.load();
 		audio.play();
 	}if (faixa==1) {
 		ms=26;
 		ale=getRandomInt(ms)
-		var audio = new Audio('src/sons/audio interativo/perdeu/'+lista_audio_perdeu[ale][0]);
+		audio = new Audio('src/sons/audio interativo/perdeu/'+lista_audio_perdeu[ale][0]);
 		duracao_audio=lista_audio_perdeu[ale][1]
 		audio.load();
 		audio.play();
 	}if (faixa==2) {
 		ms=6
 		ale=getRandomInt(ms)
-		var audio = new Audio('src/sons/audio interativo/denovo/'+lista_audio_denovo[ale][0]);
+		audio = new Audio('src/sons/audio interativo/denovo/'+lista_audio_denovo[ale][0]);
 		duracao_audio=lista_audio_denovo[ale][1]
 		audio.load();
 		audio.play();
 	}if (faixa==3) {
 		ms=14
 		ale=getRandomInt(ms)
-		var audio = new Audio('src/sons/audio interativo/empate/'+lista_audio_empate[ale][0]);
+		audio = new Audio('src/sons/audio interativo/empate/'+lista_audio_empate[ale][0]);
 		duracao_audio=lista_audio_empate[ale][1]
 		audio.load();
 		audio.play();
 	}if (faixa==4) {
 		ms=18;
 		ale=getRandomInt(ms)
-		var audio = new Audio('src/sons/audio interativo/ganhou/'+lista_audio_ganhou[ale][0]);
+		audio = new Audio('src/sons/audio interativo/ganhou/'+lista_audio_ganhou[ale][0]);
 		duracao_audio=lista_audio_ganhou[ale][1]
 		audio.load();
 		audio.play();
+	}
+	if (faixa==5) {
+		audio.pause();
+	}
 	}
 }
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
-
+var com_som=true;
 var duracao_audio=0
 var fim = false;
 var play_da_vez = "X"
@@ -62,6 +66,7 @@ var imagem_play_2="";
 var contra_boot =String(sessionStorage.getItem("tipo_p"));
 var vez_do_boot =true
 var tipo_boot=0;
+var controle_botao=true//evitar bug 
 //console.log("matriz ",l);
 colocar_nomes()
 play_2()
@@ -91,6 +96,8 @@ function play_2(){
 function jogando(e){
 	if (fim != true) {
 		//console.log("e == ",e)
+		if (controle_botao) {
+		controle_botao=false
 		var btn_0 = document.getElementById(e);
 		if (l[valor_do_botao(e)] != "X" && l[valor_do_botao(e)] != "O") {
 			//console.log("next play = ",play_da_vez)
@@ -126,6 +133,8 @@ function jogando(e){
 			}
 			
 			}
+	}
+	controle_botao=true
 	}
 }
 
@@ -388,6 +397,7 @@ function sair(){
 }
 function an_sair(){
 	reproduzir_audio(0)
+	com_som=false;
 	setTimeout(sair, duracao_audio);
 
 }
@@ -495,6 +505,7 @@ function pla_again(){
 
 function jogar_novamente(){
 	reproduzir_audio(2)
+	com_som=false;
 	setTimeout(pla_again, 4000);
 	
 }
