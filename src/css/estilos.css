@@ -14,6 +14,28 @@ body {
   padding: 30px 15px;
 }
 
+.alinhando_sobre{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  letter-spacing: 2px;
+  padding: 0 15px;
+  max-width: 70%;
+  padding-left: 20%;
+}
+
+.titulo_sobre{
+  padding-left: 37%;
+}
+
+.img_robo{
+  padding-left: 70%;
+}
+
+.img_velho{
+  padding-left: 10%;
+}
+
 .cabecalho .logo {
   width: 65px;
   height: 65px;
