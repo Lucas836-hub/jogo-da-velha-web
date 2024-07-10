@@ -22,6 +22,25 @@
 }
 
 @media(max-width: 811px){
+
+.titulo_sobre{
+  padding-left: 20%;
+}
+
+.img_robo{
+  padding-left: 60%;
+  width: 150px;
+}
+
+.img_velho{
+  padding-left: 10%;
+  width: 90px;
+}
+
+.menu-inicial .btn-menu{
+  text-align: center;
+align-items: center;
+}
   .home .informacoes h1 {
     font-size: 30px;
   }
@@ -44,6 +63,26 @@
 }
 
 @media(max-width: 430px) {
+
+.titulo_sobre{
+  padding-left: 20%;
+}
+
+.img_robo{
+  padding-left: 60%;
+  width: 150px;
+}
+
+.img_velho{
+  padding-left: 10%;
+  width: 90px;
+}
+
+.menu-inicial .btn-menu{
+  text-align: center;
+align-items: center;
+}
+
   .home .informacoes h1 {
     font-size: 30px;
   }
