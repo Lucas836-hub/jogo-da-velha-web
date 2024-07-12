@@ -1,11 +1,3 @@
-/*
- carregar audio
- nova ms ok
- ajustar play
- talvez pause
- 
-*/
-
 function reproduzir_audio(faixa){
 	var lista_audio_sair=[['achoqueeutavabrincando.mp3',2000],['morri.mp3',1000],['masnaovemporqueehcagao.mp3',2000],['javaiboltz.mp3',1000],['arregou.mp3',2000]]
  	var lista_audio_perdeu=[['musicatristenaruto.mp3',6000],['faleceu.mp3',1000],['souummerdamerdao.mp3',3000],['hellodarknessmyownfriendfunk.mp3',6000],['choqueuva.mp3',2000],['somfatality.mp3',2000],['naoconseguene.mp3',2000],['caixaocurto.mp3',7000],['musicatristenarutofunk.mp3',6000],['jubileuestaesquisitohoje.mp3',4000],['surprisemotherfucker.mp3',2000],['eunaoassumoessebo.mp3',2000],['voceehretardadoporacaso.mp3',5000],['vemtranquilo.mp3',2000],['impressionantecomovocestentammederrubar.mp3',4000],['queotaeuvoudaota.mp3',1000],['flautabugadatitanic.mp3',6000],['sefudeu.mp3',1000],['evilmortytema.mp3',7000],['musicatristexxxtentacion.mp3',6000],['vocenaoehtaobomassimehumfracassado.mp3',3000],['isolados.mp3',5000],['sefodeugta.mp3',4000],['hellodarknessmyownfriend.mp3',7000],['jaacaboujessica.mp3',1000],['erroufeioerrourude.mp3',3000]]
@@ -15,78 +7,59 @@ function reproduzir_audio(faixa){
 
 	// faixa == qual faixa acima
 	var ms=0
-	
+	var ale=0
 	
 	if (com_som) {
+ if(faixa==12){
+ms=14
+		ale=getRandomInt(ms)
+		audio = new Audio('src/sons/audio interativo/empate/'+lista_audio_empate[ale][0]);
+		duracao_audio=lista_audio_empate[ale][1]
+		audio.load();
+}
  	if (faixa==0) {
- 		duracao_audio=lista_audio_sair[ale_sair][1]
-		audio_sair.play();
+ 		ms=4;
+ 		ale=getRandomInt(ms)
+		audio = new Audio('src/sons/audio interativo/sair/'+lista_audio_sair[ale][0]);
+		duracao_audio=lista_audio_sair[ale][1]
+		audio.load();
+		audio.play();
 	}if (faixa==1) {
-		duracao_audio=lista_audio_perdeu[ale_perdeu][1]
-		audio_perdeu.play();
+		ms=26;
+		ale=getRandomInt(ms)
+		audio = new Audio('src/sons/audio interativo/perdeu/'+lista_audio_perdeu[ale][0]);
+		duracao_audio=lista_audio_perdeu[ale][1]
+		audio.load();
+		audio.play();
 	}if (faixa==2) {
-		duracao_audio=lista_audio_denovo[ale_denovo][1]
-		audio_denovo.play();
+		ms=6
+		ale=getRandomInt(ms)
+		audio = new Audio('src/sons/audio interativo/denovo/'+lista_audio_denovo[ale][0]);
+		duracao_audio=lista_audio_denovo[ale][1]
+		audio.load();
+		audio.play();
 	}if (faixa==3) {
-		duracao_audio=lista_audio_empate[ale_empate][1]
-		audio_empate.play();
+		
+		audio.play();
 	}if (faixa==4) {
-		duracao_audio=lista_audio_ganhou[ale_ganhou][1]
-		audio_ganhou.play();
+		ms=18;
+		ale=getRandomInt(ms)
+		audio = new Audio('src/sons/audio interativo/ganhou/'+lista_audio_ganhou[ale][0]);
+		duracao_audio=lista_audio_ganhou[ale][1]
+		audio.load();
+		audio.play();
 	}
 	if (faixa==5) {
 		audio.pause();
 	}
 	}
-// carregando audios
-if (faixa==10) {
-	ms=4;
-	ale=getRandomInt(ms)
-	audio_sair = new Audio('src/sons/audio interativo/sair/'+lista_audio_sair[ale_sair][0]);
-	audio_sair.load();
-}
-if (faixa==11) {
-	ms=26;
-	ale=getRandomInt(ms)
-	audio_perdeu = new Audio('src/sons/audio interativo/perdeu/'+lista_audio_perdeu[ale_perdeu][0]);
-	audio_perdeu.load();
-}
-if (faixa==12) {
-	ms=6
-	ale=getRandomInt(ms)
-	audio_denovo = new Audio('src/sons/audio interativo/denovo/'+lista_audio_denovo[ale_denovo][0]);
-	audio_denovo.preload
-}
-if (faixa==13) {
-	ms=14
-	ale=getRandomInt(ms)
-	audio_empate = new Audio('src/sons/audio interativo/empate/'+lista_audio_empate[ale_empate][0]);
-	audio_empate.load();
-}
-if (faixa==14) {
-	ms=18;
-	ale=getRandomInt(ms)
-	audio_ganhou = new Audio('src/sons/audio interativo/ganhou/'+lista_audio_ganhou[ale_ganhou][0]);
-	audio_ganhou.load();
-}
 }
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-var audio_sair = null;
-var audio_perdeu = null;
-var audio_denovo = null;
-var audio_empate = null;
-var audio_ganhou = null;
-
-var ale_sair=0;
-var ale_perdeu=0;
-var ale_denovo=0;
-var ale_empate=0;
-var ale_ganhou=0;
-
+var audio = new Audio('src/sons/audio interativo/sair/'+lista_audio_sair[ale][0]);
 var com_som=true;
 var duracao_audio=0
 var fim = false;
@@ -103,11 +76,7 @@ var controle_botao=true//evitar bug
 colocar_nomes()
 play_2()
 
-reproduzir_audio(10);
-reproduzir_audio(11);
 reproduzir_audio(12);
-reproduzir_audio(13);
-reproduzir_audio(14);
 
 //btn_jogar_denovo
 document.querySelector(".btn-menu_2").style.display = "none";
@@ -544,6 +513,6 @@ function pla_again(){
 function jogar_novamente(){
 	reproduzir_audio(2)
 	com_som=false;
-	setTimeout(pla_again, duracao_audio);
+	setTimeout(pla_again, 4000);
 	
 }
