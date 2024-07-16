@@ -1,57 +1,75 @@
 function reproduzir_audio(faixa){
 	var lista_audio_sair=[['achoqueeutavabrincando.mp3',2000],['morri.mp3',1000],['masnaovemporqueehcagao.mp3',2000],['javaiboltz.mp3',1000],['arregou.mp3',2000]]
  	var lista_audio_perdeu=[['musicatristenaruto.mp3',6000],['faleceu.mp3',1000],['souummerdamerdao.mp3',3000],['hellodarknessmyownfriendfunk.mp3',6000],['choqueuva.mp3',2000],['somfatality.mp3',2000],['naoconseguene.mp3',2000],['caixaocurto.mp3',7000],['musicatristenarutofunk.mp3',6000],['jubileuestaesquisitohoje.mp3',4000],['surprisemotherfucker.mp3',2000],['eunaoassumoessebo.mp3',2000],['voceehretardadoporacaso.mp3',5000],['vemtranquilo.mp3',2000],['impressionantecomovocestentammederrubar.mp3',4000],['queotaeuvoudaota.mp3',1000],['flautabugadatitanic.mp3',6000],['sefudeu.mp3',1000],['evilmortytema.mp3',7000],['musicatristexxxtentacion.mp3',6000],['vocenaoehtaobomassimehumfracassado.mp3',3000],['isolados.mp3',5000],['sefodeugta.mp3',4000],['hellodarknessmyownfriend.mp3',7000],['jaacaboujessica.mp3',1000],['erroufeioerrourude.mp3',3000]]
- 	var lista_audio_denovo=[['tasaindodajaulaomonstro.mp3',2000],['horadoshow.mp3',1000],['vemafobadoassimnao.mp3',1000],['voupegarminhamarreta.mp3',4000],['mandarmatar.mp3',4000],['cevaimorrer.mp3',1000]]
+ 	var lista_audio_denovo=[['tasaindodajaulaomonstro.mp3',2500],['horadoshow.mp3',2000],['vemafobadoassimnao.mp3',2000],['voupegarminhamarreta.mp3',4000],['mandarmatar.mp3',4000],['cevaimorrer.mp3',1000]]
  	var lista_audio_empate=[['ehtabom.mp3',1000],['finalarnold.mp3',6000],['flautabugadaharrypotter.mp3',3000],['arredadaqui.mp3',3000],['masvocenaotemvergonha.mp3',1000],['badumtss.mp3',1000],['finalarnoldfunk.mp3',6000],['buttercup.mp3',4000],['manocetemdemencia.mp3',3000],['algumidiota.mp3',1000],['maisoumenos.mp3',5000],['vaitelascararrombado.mp3',2000],['todomundomorreu.mp3',2000],['aindabem.mp3',1000],['somdirectedbyrobert.mp3',6000]]
  	var lista_audio_ganhou=[['johncena.mp3',6000],['turndownforwhat.mp3',7000],['dorime.mp3',10000],['vouresumircomduaspalavrasparabens.mp3',3000],['shootingstars.mp3',7000],['taffareeeeeeel.mp3',9000],['machistaopressor.mp3',11000],['etetra.mp3',10000],['missaocompletagtasanandreas.mp3',6000],['sweetdreamsfunk.mp3',10000],['patomaloqueiro.mp3',14000],['musicagarrafa.mp3',8000],['smokeweedeveryday.mp3',10000],['dorimeremix.mp3',10000],['ibelieveicanfly.mp3',7000],['alienx.mp3',12000],['whenyousmile.mp3',10000],['ceehobichaomesmoheindoido.mp3',1000]]
 
 	// faixa == qual faixa acima
 	var ms=0
-	var ale=0
-	
+
 	if (com_som) {
- if(faixa==12){
-ms=14
-		ale=getRandomInt(ms)
-		audio = new Audio('src/sons/audio interativo/empate/'+lista_audio_empate[ale][0]);
-		duracao_audio=lista_audio_empate[ale][1]
-		audio.load();
-}
- 	if (faixa==0) {
- 		ms=4;
- 		ale=getRandomInt(ms)
-		audio = new Audio('src/sons/audio interativo/sair/'+lista_audio_sair[ale][0]);
-		duracao_audio=lista_audio_sair[ale][1]
-		audio.load();
-		audio.play();
-	}if (faixa==1) {
-		ms=26;
-		ale=getRandomInt(ms)
-		audio = new Audio('src/sons/audio interativo/perdeu/'+lista_audio_perdeu[ale][0]);
-		duracao_audio=lista_audio_perdeu[ale][1]
-		audio.load();
-		audio.play();
-	}if (faixa==2) {
-		ms=6
-		ale=getRandomInt(ms)
-		audio = new Audio('src/sons/audio interativo/denovo/'+lista_audio_denovo[ale][0]);
-		duracao_audio=lista_audio_denovo[ale][1]
-		audio.load();
-		audio.play();
-	}if (faixa==3) {
+ 		if (faixa==0) {
+	 		ms=4;
+ 			ale_sair=getRandomInt(ms)
+			audio_sair = new Audio('src/sons/sair/'+lista_audio_sair[ale_sair][0]);
+			audio_sair.load();
 		
-		audio.play();
-	}if (faixa==4) {
-		ms=18;
-		ale=getRandomInt(ms)
-		audio = new Audio('src/sons/audio interativo/ganhou/'+lista_audio_ganhou[ale][0]);
-		duracao_audio=lista_audio_ganhou[ale][1]
-		audio.load();
-		audio.play();
-	}
-	if (faixa==5) {
-		audio.pause();
-	}
+		}if (faixa==1) {
+			ms=26;
+			ale_perdeu=getRandomInt(ms)
+			audio_perdeu = new Audio('src/sons/perdeu/'+lista_audio_perdeu[ale_perdeu][0]);
+			//duracao_audio=lista_audio_perdeu[ale_perdeu][1]
+			audio_perdeu.load();
+		
+		}if (faixa==2) {
+			ms=6
+			ale_denovo=getRandomInt(ms)
+			audio_denovo = new Audio('src/sons/denovo/'+lista_audio_denovo[ale_denovo][0]);
+			//duracao_audio=lista_audio_denovo[ale_denovo][1]
+			audio_denovo.load();
+			
+		}if (faixa==3) {
+			ms=14
+			ale_empate=getRandomInt(ms)
+			audio_empate = new Audio('src/sons/empate/'+lista_audio_empate[ale_empate][0]);
+			//duracao_audio=lista_audio_empate[ale_empate][1]
+			audio_empate.load();
+			
+		}if (faixa==4) {
+			ms=18;
+			ale_ganhou=getRandomInt(ms)
+			audio_ganhou = new Audio('src/sons/ganhou/'+lista_audio_ganhou[ale_ganhou][0]);
+			duracao_audio=lista_audio_ganhou[ale_ganhou][1]
+			audio_ganhou.load();
+			
+		}
+		if (faixa==5) {
+			audio_ganhou.pause();
+			audio_empate.pause();
+			audio_perdeu.pause();
+		}
+// carregando audios
+		if (faixa==10) {
+			duracao_audio=lista_audio_sair[ale_sair][1]
+			audio_sair.play();
+		}
+		if (faixa==11) {
+			duracao_audio=lista_audio_perdeu[ale_perdeu][1]
+			audio_perdeu.play();
+		}
+		if (faixa==12) {
+			duracao_audio=lista_audio_denovo[ale_denovo][1]
+			audio_denovo.play();
+		}
+		if (faixa==13) {
+			duracao_audio=lista_audio_empate[ale_empate][1]
+			audio_empate.play();
+		}
+		if (faixa==14) {
+			duracao_audio=lista_audio_ganhou[ale_ganhou][1]
+			audio_ganhou.play();
+		}
 	}
 }
 
@@ -59,7 +77,19 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-var audio = new Audio('src/sons/audio interativo/sair/'+lista_audio_sair[ale][0]);
+var audio_sair = null;
+var audio_perdeu = null;
+var audio_denovo = null;
+var audio_empate = null;
+var audio_ganhou = null;
+
+var ale_sair=0;
+var ale_perdeu=0;
+var ale_denovo=0;
+var ale_empate=0;
+var ale_ganhou=0;
+
+
 var com_som=true;
 var duracao_audio=0
 var fim = false;
@@ -76,7 +106,11 @@ var controle_botao=true//evitar bug
 colocar_nomes()
 play_2()
 
-reproduzir_audio(12);
+reproduzir_audio(0)
+reproduzir_audio(1)
+reproduzir_audio(2)
+reproduzir_audio(3)
+reproduzir_audio(4)
 
 //btn_jogar_denovo
 document.querySelector(".btn-menu_2").style.display = "none";
@@ -104,40 +138,40 @@ function jogando(e){
 	if (fim != true) {
 		//console.log("e == ",e)
 		if (controle_botao) {
-		controle_botao=false
-		var btn_0 = document.getElementById(e);
-		if (l[valor_do_botao(e)] != "X" && l[valor_do_botao(e)] != "O") {
-			//console.log("next play = ",play_da_vez)
-			btn_0.innerHTML = play_da_vez;
-			l.splice(valor_do_botao(e),1,play_da_vez)
-			btn_0.style.background = "lightblue";
-			//audio_sair(5);
-			//console.log("tentou audio")
-			troca_play();
-			cont_botao+=1;
-			finalizar_partida()
-			troca_imagem()
-			//console.log(prox_img)
-			//console.log("matriz ",l)
-		}else{
-			vez_do_boot=false
-		}
-		if (contra_boot == "false") {
-			if (vez_do_boot) {
+			controle_botao=false
+			var btn_0 = document.getElementById(e);
+			if (l[valor_do_botao(e)] != "X" && l[valor_do_botao(e)] != "O") {
+				l.splice(valor_do_botao(e),1,play_da_vez)
+				//console.log("next play = ",play_da_vez)
+				btn_0.innerHTML = play_da_vez;
+				btn_0.style.background = "lightblue";
+				//audio_sair(5);
+				//console.log("tentou audio")
+				troca_play();
+				cont_botao+=1;
+				finalizar_partida()
+				troca_imagem()
+				//console.log(prox_img)
+				//console.log("matriz ",l)
+			}else{
 				vez_do_boot=false
-				//console.log("contra_boot ativado")
-				if(tipo_boot ==2) {
-					setTimeout(boot_facil, 500);
-				}if(tipo_boot ==1){
-					setTimeout(boot_medio, 500);
-				}if(tipo_boot ==0){
-					setTimeout(boot_dificil, 500);
+			}
+			if (contra_boot == "false") {
+				if (vez_do_boot) {
+					vez_do_boot=false
+					//console.log("contra_boot ativado")
+					if(tipo_boot ==2) {
+						setTimeout(boot_facil, 500);
+					}if(tipo_boot ==1){
+						setTimeout(boot_medio, 500);
+					}if(tipo_boot ==0){
+						setTimeout(boot_dificil, 500);
 				}
 				//console.log("boot jogou ",tipo_boot)
 				
-			} else {
-				vez_do_boot=true
-			}
+				} else {
+					vez_do_boot=true
+				}
 			
 			}
 	}
@@ -403,7 +437,8 @@ function sair(){
 	window.location.href="tipo-de-partida.html";
 }
 function an_sair(){
-	reproduzir_audio(0)
+	reproduzir_audio(5)
+	reproduzir_audio(10)
 	com_som=false;
 	setTimeout(sair, duracao_audio);
 
@@ -470,7 +505,7 @@ function preencher_play(){
 		}else{
 			nome_play.innerHTML = "Player 1 é o vencedor"
 		}
-		reproduzir_audio(4)
+		reproduzir_audio(14)
 	}if (nm == 'O') {
 		// imagem
 
@@ -484,11 +519,11 @@ function preencher_play(){
 		if (jkl == "true") {
 			//console.log("o vei fei")
 			document.getElementById('troca_imagem_play_1').src="src/imagens/imagem-2_80.png";
-			reproduzir_audio(4)
+			reproduzir_audio(14)
 		}else{
 			//console.log("biitu")
 			document.getElementById('troca_imagem_play_1').src="src/imagens/robo-4_80.png";
-			reproduzir_audio(1)
+			reproduzir_audio(11)
 		}
 		// nome 
 
@@ -501,7 +536,7 @@ function preencher_play(){
 
 		document.getElementById('troca_imagem_play_1').src="src/imagens/ts_100.png";
 		nome_play.innerHTML = "Deu Velha"
-		reproduzir_audio(3)
+		reproduzir_audio(13)
 	}
 	
 }
@@ -511,8 +546,9 @@ function pla_again(){
 }
 
 function jogar_novamente(){
-	reproduzir_audio(2)
+	reproduzir_audio(5)
+	reproduzir_audio(12)
 	com_som=false;
-	setTimeout(pla_again, 4000);
+	setTimeout(pla_again, duracao_audio);
 	
 }
