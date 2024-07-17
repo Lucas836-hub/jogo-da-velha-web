@@ -41,6 +41,12 @@
   text-align: center;
 align-items: center;
 }
+
+.menu-de-partida{
+    padding-bottom: 30px;
+    padding-left: 15%;
+  }
+
   .home .informacoes h1 {
     font-size: 30px;
   }
@@ -100,7 +106,7 @@ align-items: center;
   }
 
   .menu-inicial{
-    padding-left: 25%;
+    padding-left: 20%;
   }
 
   .parte_funcional{
@@ -109,6 +115,7 @@ align-items: center;
 
   .menu-de-partida{
     padding-bottom: 30px;
+    padding-left: 15%;
   }
 
   .menu-de-partida .tabuleiro .btn-tabuleiro{
@@ -116,7 +123,7 @@ align-items: center;
   line-height: 45px;
   font-family: "Raleway", sans serif;
   font-size: 18px;
-  width: 50px;
+  width: 80px;
   }
 
 .Player_parte_baixa{
@@ -138,11 +145,11 @@ align-items: center;
 }
 
 .espaco_1{
-  min-height: calc(43vh - 240px);
+  min-height: calc(70vh - 240px);
 }
 
 .espaco_2{
-  min-height:  calc(73vh - 530px);
+  min-height:  calc(73vh - 400px);
 }
   .menu-pre-partida-comum{
     padding-left: 10%;
@@ -157,6 +164,116 @@ align-items: center;
 
   img{
     width: 80px;
+  }
+
+  .config-play_1{
+    padding-left: 5%;
+    gap: 5px;
+  }
+
+  .config-play_2{
+    padding-left: 15%;
+    gap: 5px;
+  }
+}
+
+@media(max-width: 314px) {
+
+.titulo_sobre{
+  padding-left: 20%;
+}
+
+.img_robo{
+  padding-left: 15%;
+  width: 150px;
+}
+
+.img_velho{
+  padding-left: 10%;
+  width: 90px;
+}
+
+.menu-inicial .btn-menu{
+  text-align: center;
+align-items: center;
+}
+
+  .home .informacoes h1 {
+    font-size: 30px;
+  }
+
+  .home .informacoes p {
+    font-size: 16px;
+  }
+
+  .home .container-foto img {
+      max-width: 320px;
+  }
+
+  .projetos {
+    padding: 30px;
+  }
+
+  .menu-inicial{
+    padding-left: 10%;
+  }
+
+  .parte_funcional{
+    flex-direction: column;
+  }
+
+  .menu-de-partida{
+    padding-bottom: 30px;
+    padding-left: 15%;
+  }
+
+  .menu-de-partida .tabuleiro .btn-tabuleiro{
+  
+  line-height: 45px;
+  font-family: "Raleway", sans serif;
+  font-size: 18px;
+  width: 60px;
+  height: 60px;
+  }
+
+  .Player_parte_baixa{
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  padding-left: 10%;
+}
+
+  .Player_parte_baixa .play_2 .btn-menu{
+  
+  line-height: 50px;
+  margin-top: 20px;
+  margin-right: 40px;
+  font-family: "Raleway", sans serif;
+  font-size: 18px;
+  width: 150px;
+  border-radius: 15px;
+}
+
+  .espaco_1{
+  min-height: calc(60vh - 250px);
+}
+
+  .espaco_2{
+  min-height:  calc(73vh - 350px);
+}
+  .menu-pre-partida-comum{
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-pre-partida-comum .btn-menu{
+    width: 200px;
+    font-size: 14px;
+  }
+
+  img{
+    width: 60px;
   }
 
   .config-play_1{
