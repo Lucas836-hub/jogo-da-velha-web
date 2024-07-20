@@ -177,6 +177,116 @@ align-items: center;
   }
 }
 
+@media(max-width: 364px) {
+
+.titulo_sobre{
+  padding-left: 20%;
+}
+
+.img_robo{
+  padding-left: 15%;
+  width: 150px;
+}
+
+.img_velho{
+  padding-left: 10%;
+  width: 90px;
+}
+
+.menu-inicial .btn-menu{
+  text-align: center;
+align-items: center;
+}
+
+  .home .informacoes h1 {
+    font-size: 30px;
+  }
+
+  .home .informacoes p {
+    font-size: 16px;
+  }
+
+  .home .container-foto img {
+      max-width: 320px;
+  }
+
+  .projetos {
+    padding: 30px;
+  }
+
+  .menu-inicial{
+    padding-left: 10%;
+  }
+
+  .parte_funcional{
+    flex-direction: column;
+  }
+
+  .menu-de-partida{
+    padding-bottom: 30px;
+    padding-left: 15%;
+  }
+
+  .menu-de-partida .tabuleiro .btn-tabuleiro{
+  
+  line-height: 45px;
+  font-family: "Raleway", sans serif;
+  font-size: 18px;
+  width: 65px;
+  height: 55px;
+  }
+
+  .Player_parte_baixa{
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  padding-left: 10%;
+}
+
+  .Player_parte_baixa .play_2 .btn-menu{
+  
+  line-height: 50px;
+  margin-top: 20px;
+  margin-right: 40px;
+  font-family: "Raleway", sans serif;
+  font-size: 18px;
+  width: 150px;
+  border-radius: 15px;
+}
+
+  .espaco_1{
+  min-height: calc(60vh - 250px);
+}
+
+  .espaco_2{
+  min-height:  calc(73vh - 350px);
+}
+  .menu-pre-partida-comum{
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-pre-partida-comum .btn-menu{
+    width: 200px;
+    font-size: 14px;
+  }
+
+  img{
+    width: 60px;
+  }
+
+  .config-play_1{
+    padding-left: 5%;
+    gap: 5px;
+  }
+
+  .config-play_2{
+    padding-left: 15%;
+    gap: 5px;
+  }
+}
+
 @media(max-width: 314px) {
 
 .titulo_sobre{
@@ -234,6 +344,336 @@ align-items: center;
   font-size: 18px;
   width: 60px;
   height: 60px;
+  }
+
+  .Player_parte_baixa{
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  padding-left: 10%;
+}
+
+  .Player_parte_baixa .play_2 .btn-menu{
+  
+  line-height: 50px;
+  margin-top: 20px;
+  margin-right: 40px;
+  font-family: "Raleway", sans serif;
+  font-size: 18px;
+  width: 150px;
+  border-radius: 15px;
+}
+
+  .espaco_1{
+  min-height: calc(60vh - 250px);
+}
+
+  .espaco_2{
+  min-height:  calc(73vh - 350px);
+}
+  .menu-pre-partida-comum{
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-pre-partida-comum .btn-menu{
+    width: 200px;
+    font-size: 14px;
+  }
+
+  img{
+    width: 60px;
+  }
+
+  .config-play_1{
+    padding-left: 5%;
+    gap: 5px;
+  }
+
+  .config-play_2{
+    padding-left: 15%;
+    gap: 5px;
+  }
+}
+
+@media(max-width: 294px) {
+
+.titulo_sobre{
+  padding-left: 20%;
+}
+
+.img_robo{
+  padding-left: 15%;
+  width: 150px;
+}
+
+.img_velho{
+  padding-left: 10%;
+  width: 90px;
+}
+
+.menu-inicial .btn-menu{
+  text-align: center;
+align-items: center;
+}
+
+  .home .informacoes h1 {
+    font-size: 30px;
+  }
+
+  .home .informacoes p {
+    font-size: 16px;
+  }
+
+  .home .container-foto img {
+      max-width: 320px;
+  }
+
+  .projetos {
+    padding: 30px;
+  }
+
+  .menu-inicial{
+    padding-left: 10%;
+  }
+
+  .parte_funcional{
+    flex-direction: column;
+  }
+
+  .menu-de-partida{
+    padding-bottom: 30px;
+    padding-left: 15%;
+  }
+
+  .menu-de-partida .tabuleiro .btn-tabuleiro{
+  
+  line-height: 45px;
+  font-family: "Raleway", sans serif;
+  font-size: 18px;
+  width: 50px;
+  height: 60px;
+  }
+
+  .Player_parte_baixa{
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  padding-left: 10%;
+}
+
+  .Player_parte_baixa .play_2 .btn-menu{
+  
+  line-height: 50px;
+  margin-top: 20px;
+  margin-right: 40px;
+  font-family: "Raleway", sans serif;
+  font-size: 18px;
+  width: 150px;
+  border-radius: 15px;
+}
+
+  .espaco_1{
+  min-height: calc(60vh - 250px);
+}
+
+  .espaco_2{
+  min-height:  calc(73vh - 350px);
+}
+  .menu-pre-partida-comum{
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-pre-partida-comum .btn-menu{
+    width: 200px;
+    font-size: 14px;
+  }
+
+  img{
+    width: 60px;
+  }
+
+  .config-play_1{
+    padding-left: 5%;
+    gap: 5px;
+  }
+
+  .config-play_2{
+    padding-left: 15%;
+    gap: 5px;
+  }
+}
+
+@media(max-width: 259px) {
+
+.titulo_sobre{
+  padding-left: 20%;
+}
+
+.img_robo{
+  padding-left: 15%;
+  width: 150px;
+}
+
+.img_velho{
+  padding-left: 10%;
+  width: 90px;
+}
+
+.menu-inicial .btn-menu{
+  text-align: center;
+align-items: center;
+}
+
+  .home .informacoes h1 {
+    font-size: 30px;
+  }
+
+  .home .informacoes p {
+    font-size: 16px;
+  }
+
+  .home .container-foto img {
+      max-width: 320px;
+  }
+
+  .projetos {
+    padding: 30px;
+  }
+
+  .menu-inicial{
+    padding-left: 10%;
+  }
+
+  .parte_funcional{
+    flex-direction: column;
+  }
+
+  .menu-de-partida{
+    padding-bottom: 30px;
+    padding-left: 15%;
+  }
+
+  .menu-de-partida .tabuleiro .btn-tabuleiro{
+  
+  line-height: 45px;
+  font-family: "Raleway", sans serif;
+  font-size: 18px;
+  width: 45px;
+  height: 55px;
+  }
+
+  .Player_parte_baixa{
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  padding-left: 10%;
+}
+
+  .Player_parte_baixa .play_2 .btn-menu{
+  
+  line-height: 50px;
+  margin-top: 20px;
+  margin-right: 40px;
+  font-family: "Raleway", sans serif;
+  font-size: 18px;
+  width: 150px;
+  border-radius: 15px;
+}
+
+  .espaco_1{
+  min-height: calc(60vh - 250px);
+}
+
+  .espaco_2{
+  min-height:  calc(73vh - 350px);
+}
+  .menu-pre-partida-comum{
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-pre-partida-comum .btn-menu{
+    width: 200px;
+    font-size: 14px;
+  }
+
+  img{
+    width: 60px;
+  }
+
+  .config-play_1{
+    padding-left: 5%;
+    gap: 5px;
+  }
+
+  .config-play_2{
+    padding-left: 15%;
+    gap: 5px;
+  }
+}
+
+@media(max-width: 241px) {
+
+.titulo_sobre{
+  padding-left: 20%;
+}
+
+.img_robo{
+  padding-left: 15%;
+  width: 150px;
+}
+
+.img_velho{
+  padding-left: 10%;
+  width: 90px;
+}
+
+.menu-inicial .btn-menu{
+  text-align: center;
+align-items: center;
+}
+
+  .home .informacoes h1 {
+    font-size: 30px;
+  }
+
+  .home .informacoes p {
+    font-size: 16px;
+  }
+
+  .home .container-foto img {
+      max-width: 320px;
+  }
+
+  .projetos {
+    padding: 30px;
+  }
+
+  .menu-inicial{
+    padding-left: 10%;
+  }
+
+  .parte_funcional{
+    flex-direction: column;
+  }
+
+  .menu-de-partida{
+    padding-bottom: 30px;
+    padding-left: 15%;
+  }
+
+  .menu-de-partida .tabuleiro .btn-tabuleiro{
+  
+  line-height: 45px;
+  font-family: "Raleway", sans serif;
+  font-size: 18px;
+  width: 40px;
+  height: 50px;
   }
 
   .Player_parte_baixa{
