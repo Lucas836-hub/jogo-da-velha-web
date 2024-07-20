@@ -66,6 +66,14 @@ align-items: center;
   .parte_funcional{
     flex-direction: column;
   }
+
+  .Player_parte_baixa{
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    padding-left: 15%;
+  }
+  
 }
 
 @media(max-width: 430px) {
