@@ -369,59 +369,70 @@ function enviar_resul(v){
 
 function finalizar_partida(){
 	//linha
+	var controle_final=true; //corrigi o bug da velha no final
 	if (l[0] == l[1] && l[1] == l[2] && l[1] != ""){
+		controle_final=false;
 		enviar_resul(l[1])
 		sessionStorage.setItem("linha_win",0);
 		preencher_frame()
 		//window.location.href="resultado.html";
 	}
 	if(l[3] == l[4] && l[4] == l[5] && l[4] != ""){
+		controle_final=false;
 		enviar_resul(l[4])
 		sessionStorage.setItem("linha_win",1);
 		preencher_frame()
 	}
 	if(l[6] == l[7] && l[7] == l[8] && l[7] != ""){
+		controle_final=false;
 		enviar_resul(l[7])
 		sessionStorage.setItem("linha_win",2);
 		preencher_frame()
 	}
 	// coluna
 	if(l[0] == l[3] && l[3] == l[6] && l[3] != ""){
+		controle_final=false;
 		enviar_resul(l[3])
 		sessionStorage.setItem("linha_win",3);
 		preencher_frame()
 	}
 	if(l[1] == l[4] && l[4] == l[7] && l[4] != ""){
+		controle_final=false;
 		enviar_resul(l[4])
 		sessionStorage.setItem("linha_win",4);
 		preencher_frame()
 	}
 	if(l[2] == l[5] && l[5] == l[8] && l[5] != ""){
+		controle_final=false;
 		enviar_resul(l[5])
 		sessionStorage.setItem("linha_win",5);
 		preencher_frame()
 	}
 	// cruzado
 	if(l[0] == l[4] && l[4] == l[8] && l[4] != ""){
+		controle_final=false;
 		enviar_resul(l[4])
 		sessionStorage.setItem("linha_win",6);
 		preencher_frame()
 	}
 	if(l[2] == l[4] && l[4] == l[6] && l[4] != ""){
+		controle_final=false;
 		enviar_resul(l[4])
 		sessionStorage.setItem("linha_win",7);
 		preencher_frame()
 	}	
-	if( cont_botao == 9){
-		if(l[0] == l[4] && l[4] == l[8] && l[4] != ""){
-			enviar_resul(l[4])
-			sessionStorage.setItem("linha_win",6);
+	if(controle_final){
+		if( cont_botao == 9){
+			if(l[0] == l[4] && l[4] == l[8] && l[4] != ""){
+				enviar_resul(l[4])
+				sessionStorage.setItem("linha_win",6);
+				preencher_frame()
+		}else{
+			enviar_resul("v")
+			sessionStorage.setItem("linha_win",8);
 			preencher_frame()
-	}else{
-		enviar_resul("v")
-		sessionStorage.setItem("linha_win",8);
-		preencher_frame()
-	}
+			}
+		}
 	}
 }
 
