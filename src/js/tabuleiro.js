@@ -114,6 +114,8 @@ reproduzir_audio(4)
 
 //btn_jogar_denovo
 document.querySelector(".btn-menu_2").style.display = "none";
+document.querySelector(".config-play_1 .confete").style.display = "none";
+
 
 function play_2(){
 	// identifica se a imagem se vai ser humano ou robo
@@ -194,7 +196,6 @@ function troca_imagem(){
 			prox_img=0
 		}
 	}
-
 }
 
 function boot_facil(){
@@ -476,6 +477,8 @@ function sumir_dados(){
 	z_i.remove()
 
 	document.querySelector(".btn-menu_2").style.display = "inline-block";
+	document.querySelector(".config-play_1 .confete").style.display = "inline-block";
+
 }
 
 function descolorir(){
