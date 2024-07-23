@@ -253,6 +253,16 @@ body {
   justify-content: space-between;
 }
 
+.config-play_1 .confete{ 
+  position: absolute;
+  top: 90px;
+
+}
+
+.config-play_1 .img_p1{
+  padding-left: 30px;
+}
+
 .footer{
   width: 100%;
   padding-block: 30px;

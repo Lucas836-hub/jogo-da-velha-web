@@ -27,7 +27,6 @@
   padding-left: 20%;
 }
 
-
 .menu-inicial .btn-menu{
   text-align: center;
 align-items: center;
@@ -59,12 +58,16 @@ align-items: center;
   }
 
   .Player_parte_baixa{
-    align-items: center;
-    display: flex;
-    gap: 10px;
-    padding-left: 15%;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  padding-left: 15%;
+}
+
+  .menu-inicial{
+    padding-left: 30%;
   }
-  
+
 }
 
 @media(max-width: 430px) {
@@ -173,6 +176,18 @@ align-items: center;
   .config-play_2{
     padding-left: 15%;
     gap: 5px;
+  }
+
+  .config-play_1 .img_p1{
+    width: 100px;
+  }
+
+  .config-play_1 .confete{ 
+    position: absolute;
+    left: 40px;
+    top: 110px;
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -284,6 +299,18 @@ align-items: center;
     padding-left: 15%;
     gap: 5px;
   }
+
+  .config-play_1 .img_p1{
+    width: 100px;
+  }
+
+  .config-play_1 .confete{ 
+    position: absolute;
+    left: 40px;
+    top: 110px;
+    width: 100px;
+    height: 100px;
+  }
 }
 
 @media(max-width: 314px) {
@@ -393,6 +420,18 @@ align-items: center;
   .config-play_2{
     padding-left: 15%;
     gap: 5px;
+  }
+
+  .config-play_1 .img_p1{
+    width: 90px;
+  }
+
+  .config-play_1 .confete{ 
+    position: absolute;
+    left: 35px;
+    top: 110px;
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -504,6 +543,18 @@ align-items: center;
     padding-left: 15%;
     gap: 5px;
   }
+
+  .config-play_1 .img_p1{
+    width: 90px;
+  }
+
+  .config-play_1 .confete{ 
+    position: absolute;
+    left: 35px;
+    top: 110px;
+    width: 100px;
+    height: 100px;
+  }
 }
 
 @media(max-width: 259px) {
@@ -578,8 +629,19 @@ align-items: center;
   margin-top: 20px;
   margin-right: 40px;
   font-family: "Raleway", sans serif;
-  font-size: 18px;
-  width: 150px;
+  font-size: 16px;
+  width: 140px;
+  border-radius: 15px;
+}
+
+  .Player_parte_baixa .play_2 .btn-menu_2{
+  
+  line-height: 50px;
+  margin-top: 20px;
+  margin-right: 40px;
+  font-family: "Raleway", sans serif;
+  font-size: 16px;
+  width: 130px;
   border-radius: 15px;
 }
 
@@ -613,6 +675,18 @@ align-items: center;
   .config-play_2{
     padding-left: 15%;
     gap: 5px;
+  }
+
+  .config-play_1 .img_p1{
+    width: 80px;
+  }
+
+  .config-play_1 .confete{ 
+    position: absolute;
+    left: 30px;
+    top: 110px;
+    width: 90px;
+    height: 90px;
   }
 }
 
@@ -655,6 +729,12 @@ align-items: center;
 
   .menu-inicial{
     padding-left: 10%;
+
+  }
+
+  .menu-inicial .btn-menu{
+    width: 180px;
+    font-size: 16px;
   }
 
   .parte_funcional{
@@ -688,7 +768,18 @@ align-items: center;
   margin-top: 20px;
   margin-right: 40px;
   font-family: "Raleway", sans serif;
-  font-size: 18px;
+  font-size: 16px;
+  width: 120px;
+  border-radius: 15px;
+}
+
+.Player_parte_baixa .play_2 .btn-menu_2{
+  
+  line-height: 50px;
+  margin-top: 20px;
+  margin-right: 40px;
+  font-family: "Raleway", sans serif;
+  font-size: 16px;
   width: 150px;
   border-radius: 15px;
 }
@@ -724,4 +815,6 @@ align-items: center;
     padding-left: 15%;
     gap: 5px;
   }
+
+
 }
