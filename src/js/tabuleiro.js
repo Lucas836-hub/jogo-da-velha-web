@@ -5,51 +5,187 @@ function reproduzir_audio(faixa){
  	var lista_audio_empate=[['ehtabom.mp3',1000],['finalarnold.mp3',6000],['flautabugadaharrypotter.mp3',3000],['arredadaqui.mp3',3000],['masvocenaotemvergonha.mp3',1000],['badumtss.mp3',1000],['finalarnoldfunk.mp3',6000],['buttercup.mp3',4000],['manocetemdemencia.mp3',3000],['algumidiota.mp3',1000],['maisoumenos.mp3',5000],['vaitelascararrombado.mp3',2000],['todomundomorreu.mp3',2000],['aindabem.mp3',1000],['somdirectedbyrobert.mp3',6000]]
  	var lista_audio_ganhou=[['johncena.mp3',6000],['turndownforwhat.mp3',7000],['dorime.mp3',10000],['vouresumircomduaspalavrasparabens.mp3',3000],['shootingstars.mp3',7000],['taffareeeeeeel.mp3',9000],['machistaopressor.mp3',11000],['etetra.mp3',10000],['missaocompletagtasanandreas.mp3',6000],['sweetdreamsfunk.mp3',10000],['patomaloqueiro.mp3',14000],['musicagarrafa.mp3',8000],['smokeweedeveryday.mp3',10000],['dorimeremix.mp3',10000],['ibelieveicanfly.mp3',7000],['alienx.mp3',12000],['whenyousmile.mp3',10000],['ceehobichaomesmoheindoido.mp3',1000]]
 
-	// faixa == qual faixa acima
+	// faixa == qual faixa acima ^
 	var ms=0
+	var anterior="";
+	var semfim=0; // essa porcaria nao aceita while true :(
+	var prox_musi=true;
+	var val_1='';
+	var val_2='';
 
 	if (com_som) {
+
+		// carregar audios
  		if (faixa==0) {
-	 		ms=4;
- 			ale_sair=getRandomInt(ms)
+	 		ms=5;
+
+ 			anterior=sessionStorage.getItem("ultimo_sair");
+
+ 			for (var i = 0; i < anterior.length; i++) {
+ 				if (anterior[i] != ",") {
+ 					if (prox_musi) {
+ 						val_1+=anterior[i];
+ 					}else{
+ 						val_2+=anterior[i];
+ 					}
+ 				}
+ 				else{
+ 					prox_musi=false
+ 				}
+ 			}
+
+ 			while (semfim != 1) {
+ 				ale_sair=getRandomInt(ms)	
+ 				if (val_1 != String(ale_sair) && val_2 != String(ale_sair)){
+ 					break;
+ 				}
+ 			}
+
+ 			val_1=val_2
+ 			val_2=ale_sair
+
 			audio_sair = new Audio('src/sons/sair/'+lista_audio_sair[ale_sair][0]);
+			sessionStorage.setItem("ultimo_sair",val_1+","+val_2);
 			audio_sair.load();
 		
 		}if (faixa==1) {
 			ms=26;
-			ale_perdeu=getRandomInt(ms)
+			
+ 			anterior=sessionStorage.getItem("ultimo_perdeu")
+
+ 			for (var i = 0; i < anterior.length; i++) {
+ 				if (anterior[i] != ",") {
+ 					if (prox_musi) {
+ 						val_1+=anterior[i];
+ 					}else{
+ 						val_2+=anterior[i];
+ 					}
+ 				}
+ 				else{
+ 					prox_musi=false
+ 				}
+ 			}
+
+ 			while (semfim != 1){
+ 				ale_perdeu=getRandomInt(ms)	
+ 				if (val_1 != String(ale_perdeu) && val_2 != String(ale_perdeu)){
+ 					break;
+ 				}
+ 			}
+
+ 			val_1=val_2
+ 			val_2=ale_perdeu
+
 			audio_perdeu = new Audio('src/sons/perdeu/'+lista_audio_perdeu[ale_perdeu][0]);
-			//duracao_audio=lista_audio_perdeu[ale_perdeu][1]
+			sessionStorage.setItem("ultimo_perdeu",ale_perdeu);
 			audio_perdeu.load();
 		
 		}if (faixa==2) {
-			ms=6
-			ale_denovo=getRandomInt(ms)
+			ms=7
+			
+ 			anterior=sessionStorage.getItem("ultimo_denovo")
+
+ 			for (var i = 0; i < anterior.length; i++) {
+ 				if (anterior[i] != ",") {
+ 					if (prox_musi) {
+ 						val_1+=anterior[i];
+ 					}else{
+ 						val_2+=anterior[i];
+ 					}
+ 				}
+ 				else{
+ 					prox_musi=false
+ 				}
+ 			}
+
+ 			while (semfim != 1){
+ 				ale_denovo=getRandomInt(ms)	
+ 				if (val_1 != String(ale_denovo) && val_2 != String(ale_denovo)){
+ 					break;
+ 				}
+ 			}
+
+ 			val_1=val_2
+ 			val_2=ale_denovo
+
 			audio_denovo = new Audio('src/sons/denovo/'+lista_audio_denovo[ale_denovo][0]);
-			//duracao_audio=lista_audio_denovo[ale_denovo][1]
+			sessionStorage.setItem("ultimo_denovo",ale_denovo);
 			audio_denovo.load();
 			
 		}if (faixa==3) {
-			ms=14
-			ale_empate=getRandomInt(ms)
+			ms=15
+			
+ 			anterior=sessionStorage.getItem("ultimo_empate")
+
+ 			for (var i = 0; i < anterior.length; i++) {
+ 				if (anterior[i] != ",") {
+ 					if (prox_musi) {
+ 						val_1+=anterior[i];
+ 					}else{
+ 						val_2+=anterior[i];
+ 					}
+ 				}
+ 				else{
+ 					prox_musi=false
+ 				}
+ 			}
+
+ 			while (semfim != 1){
+ 				ale_empate=getRandomInt(ms)	
+ 				if (val_1 != String(ale_empate) && val_2 != String(ale_empate)){
+ 					break;
+ 				}
+ 			}
+
+ 			val_1=val_2
+ 			val_2=ale_empate
+
 			audio_empate = new Audio('src/sons/empate/'+lista_audio_empate[ale_empate][0]);
-			//duracao_audio=lista_audio_empate[ale_empate][1]
+			sessionStorage.setItem("ultimo_empate",ale_empate);
 			audio_empate.load();
 			
 		}if (faixa==4) {
 			ms=18;
-			ale_ganhou=getRandomInt(ms)
+			
+ 			anterior=sessionStorage.getItem("ultimo_ganhou")
+
+ 			for (var i = 0; i < anterior.length; i++) {
+ 				if (anterior[i] != ",") {
+ 					if (prox_musi) {
+ 						val_1+=anterior[i];
+ 					}else{
+ 						val_2+=anterior[i];
+ 					}
+ 				}
+ 				else{
+ 					prox_musi=false
+ 				}
+ 			}
+
+ 			while (semfim != 1){
+ 				ale_ganhou=getRandomInt(ms)	
+ 				if (val_1 != String(ale_ganhou) && val_2 != String(ale_ganhou)){
+ 					break;
+ 				}
+ 			}
+
+ 			val_1=val_2
+ 			val_2=ale_ganhou
+
 			audio_ganhou = new Audio('src/sons/ganhou/'+lista_audio_ganhou[ale_ganhou][0]);
 			duracao_audio=lista_audio_ganhou[ale_ganhou][1]
+			sessionStorage.setItem("ultimo_ganhou",ale_ganhou);
 			audio_ganhou.load();
 			
 		}
+		// pausar audios
 		if (faixa==5) {
 			audio_ganhou.pause();
 			audio_empate.pause();
 			audio_perdeu.pause();
 		}
-// carregando audios
+
+		// reproduzir audios
 		if (faixa==10) {
 			duracao_audio=lista_audio_sair[ale_sair][1]
 			audio_sair.play();
@@ -117,6 +253,17 @@ document.querySelector(".btn-menu_2").style.display = "none";
 document.querySelector(".config-play_1 .confete").style.display = "none";
 
 
+function correcao_bug(){
+	for (var i = 0; i < 9; i++) {
+		var btn_0 =document.getElementById("btn_"+i);
+		btn_0.innerHTML = "_";
+		btn_0.style.color = '#e9e9ed';
+	}
+}
+
+correcao_bug()
+
+
 function play_2(){
 	// identifica se a imagem se vai ser humano ou robo
 	var jkl = contra_boot
@@ -146,6 +293,7 @@ function jogando(e){
 				l.splice(valor_do_botao(e),1,play_da_vez)
 				//console.log("next play = ",play_da_vez)
 				btn_0.innerHTML = play_da_vez;
+				btn_0.style.color = "black";
 				btn_0.style.background = "lightblue";
 				//audio_sair(5);
 				//console.log("tentou audio")
@@ -260,58 +408,129 @@ function boot_dificil(){
 	var c=0;
 
 	//console.log("-------------------------------------")
-	while(c < 24){
-		 //console.log("c == ",c)
-		//console.log("bloc == ",l[bloc[c][0]],"|",l[bloc[c][1]])
+	var minh_pos = [0,2,6,8];
+	var inim_pos = [8,6,2,0];
+	var jog_1 = [2,0,0,2];
+	var jog_2 = [6,8,8,6];
+
+	var controle_seguraca=true;
+
+	//jogada lateral
+	
+
+	if (controle_seguraca) {
+		while(c < 24){
+
+		if(l[bloc[c][0]] == l[bloc[c][4]] && l[bloc[c][4]] =="O" && l[bloc[c][2]] == ""){
+			//console.log("ia foi = ",bloc[c][2])
+			jogando("btn_"+bloc[c][2]);
+			controle_seguraca=false;
+			break
+		}
+
 		if(l[bloc[c][0]] == l[bloc[c][1]] && l[bloc[c][1]] =="O" && l[bloc[c][2]] == ""){
 			//console.log("ia foi = ",bloc[c][2])
 			jogando("btn_"+bloc[c][2]);
+			controle_seguraca=false;
 			break
 
 		}
 		if(l[bloc[c][0]] == l[bloc[c][2]] && l[bloc[c][2]] =="O" && l[bloc[c][1]] == ""){
 			//console.log("ia foi = ",bloc[c][1])
 			jogando("btn_"+bloc[c][1]);
+			controle_seguraca=false;
 			break
 		}
 		if(l[bloc[c][2]] == l[bloc[c][1]] && l[bloc[c][1]] =="O" && l[bloc[c][0]] == ""){
 			//console.log("ia foi = ",bloc[c][0])
 			jogando("btn_"+bloc[c][0]);
+			controle_seguraca=false;
 			break
 		}
 		c++;
+		}
 	}
 	//console.log("ganhei")
 
 	c=0;
-	while(c < 24){
+	if (controle_seguraca) {
+		while(c < 24){
 		 //console.log("c == ",c)
 		//console.log("bloc == ",l[bloc[c][0]],"|",l[bloc[c][1]])
 		if(l[bloc[c][0]] == l[bloc[c][1]] && l[bloc[c][1]] !="" && l[bloc[c][2]] == ""){
 			//console.log("ia foi = ",bloc[c][2])
 			jogando("btn_"+bloc[c][2]);
+			controle_seguraca=false;
 			break
 
 		}
 		if(l[bloc[c][0]] == l[bloc[c][2]] && l[bloc[c][2]] !="" && l[bloc[c][1]] == ""){
 			//console.log("ia foi = ",bloc[c][1])
 			jogando("btn_"+bloc[c][1]);
+			controle_seguraca=false;
 			break
 		}
 		if(l[bloc[c][2]] == l[bloc[c][1]] && l[bloc[c][1]] !="" && l[bloc[c][0]] == ""){
 			//console.log("ia foi = ",bloc[c][0])
 			jogando("btn_"+bloc[c][0]);
+			controle_seguraca=false;
 			break
 		}
 		c++;
-	}//console.log("bloquei")
+		}//console.log("bloquei")
+	}
 
-	if(c == 24){
+	if (controle_seguraca) {
+		for (var i = 0; i < 5; i++) {
+		if(l[minh_pos[i]] == l[4] && l[4] =="O" && l[inim_pos[i]] == ""){
+			jogando("btn_"+inim_pos[i]);
+			controle_seguraca=false;
+			break
+		}
+
+		if(l[minh_pos[i]] == l[4] && l[4] =="O" && l[inim_pos[i]] == "X"){
+			if (l[jog_1[i]] == "") {
+				jogando("btn_"+jog_1[i]);
+				controle_seguraca=false;
+				break
+			}
+
+			if (l[jog_2[i]] == "") {
+				jogando("btn_"+jog_2[i]);
+				controle_seguraca=false;
+				break
+			}
+		}
+		}
+	}
+
+	if (controle_seguraca) {
+		for (var i = 0; i < 5; i++) {
+
+		if(l[minh_pos[i]] == l[4] && l[4] =="X" && l[inim_pos[i]] == "O"){
+			if (l[jog_1[i]] == "") {
+				jogando("btn_"+jog_1[i]);
+				controle_seguraca=false;
+				break
+			}
+
+			if (l[jog_2[i]] == "") {
+				jogando("btn_"+jog_2[i]);
+				controle_seguraca=false;
+				break
+			}
+		}
+		}
+	}
+ 	
+ 	if (controle_seguraca) {
+		if(c == 24){
 		if (l[4] == "") {
 			jogando("btn_4");
 			//console.log("centro")
 		}else{
 			boot_facil()
+		}
 		}
 	}
 }
@@ -341,6 +560,7 @@ function colocar_nomes(){
 		}
 	}
 }
+
 function valor_do_botao(v){
 	if(v == "btn_0"){
 		return 0
@@ -496,11 +716,11 @@ function colorir(){
 	var linhas_win=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
 	if (tab != 8) {
 		for (var i = 0; i < 3; i++) {
-			console.log("valor wini ",linhas_win[tab][i])
-			console.log("lista da linha ",linhas_win[tab])
+			//console.log("valor wini ",linhas_win[tab][i])
+			//console.log("lista da linha ",linhas_win[tab])
 				var bt =document.getElementById("btn_"+linhas_win[tab][i]);
 				bt.style.background = "lightgreen";
-				console.log(" i == ",i)
+				//console.log(" i == ",i)
 			}
 		}
 }
