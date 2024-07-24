@@ -120,10 +120,12 @@ body {
   padding-left: 30%;
   padding-bottom: 30px;
   background: #F4A460;
+  color: #F4A460;;
 }
 
 .menu-de-partida .tabuleiro .btn-tabuleiro{
   align-items: center;
+  
 }
 
 .menu-de-partida .tabuleiro a:hover .btn-tabuleiro{
@@ -131,7 +133,6 @@ body {
   transition: 0.2s;
   transform: scale(1.1);
   background: #8A2BE2;
-
 }
 
 .menu-de-partida .tabuleiro .btn-tabuleiro{
@@ -146,7 +147,6 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 5px;
-
 }
 
 
