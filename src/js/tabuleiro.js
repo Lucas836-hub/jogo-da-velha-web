@@ -19,7 +19,7 @@ function reproduzir_audio(faixa){
  		if (faixa==0) {
 	 		ms=5;
 
- 			anterior=sessionStorage.getItem("ultimo_sair");
+ 			anterior=sessionStorage.getItem("ultimo_sair")+",";
 
  			for (var i = 0; i < anterior.length; i++) {
  				if (anterior[i] != ",") {
@@ -51,7 +51,7 @@ function reproduzir_audio(faixa){
 		}if (faixa==1) {
 			ms=26;
 			
- 			anterior=sessionStorage.getItem("ultimo_perdeu")
+ 			anterior=sessionStorage.getItem("ultimo_perdeu")+",";
 
  			for (var i = 0; i < anterior.length; i++) {
  				if (anterior[i] != ",") {
@@ -81,9 +81,9 @@ function reproduzir_audio(faixa){
 			audio_perdeu.load();
 		
 		}if (faixa==2) {
-			ms=7
+			ms=6
 			
- 			anterior=sessionStorage.getItem("ultimo_denovo")
+ 			anterior=sessionStorage.getItem("ultimo_denovo")+",";
 
  			for (var i = 0; i < anterior.length; i++) {
  				if (anterior[i] != ",") {
@@ -115,7 +115,7 @@ function reproduzir_audio(faixa){
 		}if (faixa==3) {
 			ms=15
 			
- 			anterior=sessionStorage.getItem("ultimo_empate")
+ 			anterior=sessionStorage.getItem("ultimo_empate")+",";
 
  			for (var i = 0; i < anterior.length; i++) {
  				if (anterior[i] != ",") {
@@ -147,7 +147,7 @@ function reproduzir_audio(faixa){
 		}if (faixa==4) {
 			ms=18;
 			
- 			anterior=sessionStorage.getItem("ultimo_ganhou")
+ 			anterior=sessionStorage.getItem("ultimo_ganhou")+",";
 
  			for (var i = 0; i < anterior.length; i++) {
  				if (anterior[i] != ",") {
@@ -229,7 +229,6 @@ var ale_ganhou=0;
 var com_som=true;
 var duracao_audio=0
 var fim = false;
-var play_da_vez = "X"
 var l =["","","","","","","","",""]
 var cont_botao=0;
 var prox_img=0;
@@ -241,6 +240,31 @@ var controle_botao=true//evitar bug
 //console.log("matriz ",l);
 colocar_nomes()
 play_2()
+
+var quem_inicia=sessionStorage.getItem("quem_vai_comeca");
+if (quem_inicia == "0") {
+	var play_da_vez = "X"
+}else{
+	var play_da_vez = "O"
+	troca_imagem()
+	if (contra_boot == "false") {
+		if (vez_do_boot) {
+			vez_do_boot=false
+			//console.log("contra_boot ativado")
+			if(tipo_boot ==2) {
+				setTimeout(boot_facil, 500);
+			}if(tipo_boot ==1){
+				setTimeout(boot_medio, 500);
+			}if(tipo_boot ==0){
+				setTimeout(boot_dificil, 500);
+		}
+		//console.log("boot jogou ",tipo_boot)
+			
+		} else {
+			vez_do_boot=true
+		}
+	}
+}
 
 reproduzir_audio(0)
 reproduzir_audio(1)
@@ -367,7 +391,7 @@ function boot_facil(){
 		}
 	}}
 
-// em desenvolvimento
+
 function boot_medio(){
 	var tabuleiro=l;
 	var icone="O"
@@ -417,7 +441,6 @@ function boot_dificil(){
 
 	//jogada lateral
 	
-
 	if (controle_seguraca) {
 		while(c < 24){
 
@@ -480,6 +503,7 @@ function boot_dificil(){
 		}//console.log("bloquei")
 	}
 
+	//estragia cruzando
 	if (controle_seguraca) {
 		for (var i = 0; i < 5; i++) {
 		if(l[minh_pos[i]] == l[4] && l[4] =="O" && l[inim_pos[i]] == ""){
@@ -504,6 +528,7 @@ function boot_dificil(){
 		}
 	}
 
+	//bloqueio da estragia cruzando
 	if (controle_seguraca) {
 		for (var i = 0; i < 5; i++) {
 
@@ -776,7 +801,7 @@ function preencher_play(){
 }
 
 function pla_again(){
-	window.location.href="campo-de-batalha.html";
+	window.location.href="sorteando.html";
 }
 
 function jogar_novamente(){

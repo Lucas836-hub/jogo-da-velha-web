@@ -1,18 +1,7 @@
-/*
-pegar os nomes ok
-setar partida ok
-mostrar os resultados ok
-audio
-add boot 1/3
-trocar img boot play ok
-
-*/
-
-//garantir que o audiu nao repita.
 function save_nome_play1(){
 	sessionStorage.setItem("save_nome_play_1",document.getElementById("name_1").value);
 	sessionStorage.setItem("save_nome_play_2",document.getElementById("name_2").value);
-	window.location.href="campo-de-batalha.html";
+	window.location.href="sorteando.html"//"campo-de-batalha.html";
 }
 
 function tipo_partida(t){
