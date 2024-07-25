@@ -91,6 +91,10 @@ align-items: center;
 align-items: center;
 }
 
+.nome_do_play{
+  font-size:20px;
+}
+
   .home .informacoes h1 {
     font-size: 30px;
   }
@@ -210,6 +214,10 @@ align-items: center;
 .menu-inicial .btn-menu{
   text-align: center;
 align-items: center;
+}
+
+.nome_do_play{
+  font-size:20px;
 }
 
   .home .informacoes h1 {
@@ -334,6 +342,10 @@ align-items: center;
 align-items: center;
 }
 
+.nome_do_play{
+  font-size:20px;
+}
+
   .home .informacoes h1 {
     font-size: 30px;
   }
@@ -456,6 +468,10 @@ align-items: center;
 align-items: center;
 }
 
+.nome_do_play{
+  font-size:18px;
+}
+
   .home .informacoes h1 {
     font-size: 30px;
   }
@@ -576,6 +592,10 @@ align-items: center;
 .menu-inicial .btn-menu{
   text-align: center;
 align-items: center;
+}
+
+.nome_do_play{
+  font-size:16px;
 }
 
   .home .informacoes h1 {
@@ -709,6 +729,10 @@ align-items: center;
 .menu-inicial .btn-menu{
   text-align: center;
 align-items: center;
+}
+
+.nome_do_play{
+  font-size:16px;
 }
 
   .home .informacoes h1 {
